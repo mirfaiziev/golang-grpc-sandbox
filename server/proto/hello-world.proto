@@ -1,0 +1,13 @@
+syntax="proto3";
+
+import "google/protobuf/empty.proto";
+
+option go_package="internal/pb";
+
+service Greeter {
+    rpc SayHelloWorld (google.protobuf.Empty) returns (HelloWorldReply) {}
+}
+
+message HelloWorldReply {
+    string message = 1;
+}
