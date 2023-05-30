@@ -1,12 +1,12 @@
 package main
 
 import (
-	"net"
-	"log"
-	"google.golang.org/grpc"
 	"context"
-	pb "github.com/mirfaiziev/golang-grpc-sandbox/server/internal/pb"
+	pb "github.com/mirfaiziev/golang-grpc-sandbox/internal/pb"
+	"google.golang.org/grpc"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
+	"log"
+	"net"
 )
 
 type server struct {
@@ -18,7 +18,7 @@ func (s *server) SayHelloWorld(ctx context.Context, in *emptypb.Empty) (*pb.Hell
 }
 
 func main() {
-	listener, err := net.Listen("tcp", ":8080")
+	listener, err := net.Listen("tcp", ":50051")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
