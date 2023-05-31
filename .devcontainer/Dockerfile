@@ -9,6 +9,8 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 RUN go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.15.2 \
    && chmod -R a+w /go/pkg
 
-RUN apt-get update && apt install -y protobuf-compiler
-RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+# RUN apt-get update && apt install -y protobuf-compiler
+# RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+# RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+# RUN go mod tidy
